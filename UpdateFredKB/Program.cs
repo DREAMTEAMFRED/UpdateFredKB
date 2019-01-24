@@ -20,6 +20,7 @@ namespace UpdatedKB
         static string question = "";
 
         static HttpClient client = new HttpClient();
+
         // NOTE: Replace this with a valid subscription key.
         static string key = Environment.GetEnvironmentVariable("updateKB_key", EnvironmentVariableTarget.User);
 
