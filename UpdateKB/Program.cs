@@ -19,10 +19,10 @@ namespace UpdatedKB
         static string answer = "";
         static string question = "";
         // NOTE: Replace this with a valid subscription key.
-        static string key = "209c1cf5f94f4392b1049da8abc4f59b";
+        static string key = Environment.GetEnvironmentVariable("updateKB_key", EnvironmentVariableTarget.User);
 
         // NOTE: Replace this with a valid knowledge base ID.
-        static string kb = "85e578a7-bf44-4f12-b46e-26efa40b1653";
+        static string kb = Environment.GetEnvironmentVariable("kb_Id", EnvironmentVariableTarget.User);
 
         static string new_kb = "";
 
