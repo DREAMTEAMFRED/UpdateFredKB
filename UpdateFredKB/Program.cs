@@ -18,6 +18,8 @@ namespace UpdatedKB
         static string method = "/knowledgebases/";
         static string answer = "";
         static string question = "";
+
+        static HttpClient client = new HttpClient();
         // NOTE: Replace this with a valid subscription key.
         static string key = Environment.GetEnvironmentVariable("updateKB_key", EnvironmentVariableTarget.User);
 
@@ -88,7 +90,6 @@ namespace UpdatedKB
 
         async static Task<Response> Patch(string uri, string body)
         {
-            using (var client = new HttpClient())
             using (var request = new HttpRequestMessage())
             {
                 request.Method = new HttpMethod("PATCH");
@@ -104,7 +105,6 @@ namespace UpdatedKB
 
         async static Task<Response> Get(string uri)
         {
-            using (var client = new HttpClient())
             using (var request = new HttpRequestMessage())
             {
                 request.Method = HttpMethod.Get;
@@ -172,7 +172,6 @@ namespace UpdatedKB
 
         async static Task<string> Post(string uri)
         {
-            using (var client = new HttpClient())
             using (var request = new HttpRequestMessage())
             {
                 request.Method = HttpMethod.Post;
